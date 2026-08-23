@@ -17,6 +17,7 @@ WebGL에서는 빌드 원본을 쓸 수 없으므로 Debug/Map 편집이 현재 
 | `SceneNavigator.cs` | Game/Debug/MapEditor 전환과 `~` 단축키 |
 | `DebugBalancePanel.cs` | 고정 키 행과 YAML 런타임 값 연결 |
 | `Editor/ClickourWebGLBuild.cs` | 필수 최적화 설정과 순차 WebGL 빌드 경로 적용 |
+| `Editor/GameViewCapture.cs` | 활성 Scene의 Game View를 `Temp/DesignReview`에 저장하는 디자인 검증 메뉴 |
 | `Art/background.svg` | 격자 배경 벡터 원본 |
 | `Art/background.png` | Inkscape 변환 배경 Sprite |
 | `Scenes/*.unity` | 런타임 생성 없이 배치된 세 실행 Scene |
