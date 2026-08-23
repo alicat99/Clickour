@@ -3,6 +3,7 @@
   <Project Path="Clickour.Balance.csproj" />
   <Project Path="Assembly-CSharp-firstpass.csproj" />
   <Project Path="Clickour.Switch.csproj" />
+  <Project Path="Clickour.Slider.csproj" />
   <Project Path="Clickour.Balance.Tests.csproj" />
   <Project Path="Clickour.Core.Tests.csproj" />
   <Project Path="Clickour.Button.csproj" />

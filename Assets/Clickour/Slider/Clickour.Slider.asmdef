@@ -1,0 +1,5 @@
+{
+  "name": "Clickour.Slider",
+  "rootNamespace": "Clickour.Slider",
+  "references": ["Clickour.Core", "Clickour.Balance", "Unity.InputSystem"]
+}
