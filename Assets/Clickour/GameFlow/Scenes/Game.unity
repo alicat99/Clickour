@@ -566,7 +566,7 @@ SpriteRenderer:
   m_Size: {x: 0.9453125, y: 0.9453125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &348809787
 GameObject:
@@ -1038,7 +1038,7 @@ SpriteRenderer:
   m_Size: {x: 0.9453125, y: 0.9453125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &484188971
 GameObject:
@@ -1945,7 +1945,7 @@ SpriteRenderer:
   m_Size: {x: 0.9453125, y: 0.9453125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &800934529
 GameObject:
@@ -2919,8 +2919,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Move mouse horizontally \xB7 Click dark UI \xB7 Arrow keys while holding
-    sliders/lists \xB7 ~ Debug"
+  m_text: "Move: Arrow keys / WASD \xB7 Click dark UI \xB7 Hold controls use the
+    same keys"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3253,7 +3253,7 @@ SpriteRenderer:
   m_Size: {x: 0.9140625, y: 0.9140625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1117316017
 GameObject:
@@ -3847,7 +3847,7 @@ SpriteRenderer:
   m_Size: {x: 0.8359375, y: 0.9140625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1254880337
 GameObject:
@@ -4000,7 +4000,7 @@ SpriteRenderer:
   m_Size: {x: 0.9453125, y: 0.9453125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1277543880
 GameObject:
@@ -4128,7 +4128,7 @@ SpriteRenderer:
   m_Size: {x: 0.9140625, y: 0.9140625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1364208092
 GameObject:
@@ -4809,7 +4809,7 @@ SpriteRenderer:
   m_Size: {x: 0.9453125, y: 0.9453125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1514041268
 GameObject:
@@ -5553,7 +5553,7 @@ SpriteRenderer:
   m_Size: {x: 0.9140625, y: 0.9140625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1743757412
 GameObject:
@@ -6361,7 +6361,7 @@ SpriteRenderer:
   m_Size: {x: 0.9453125, y: 0.9453125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2143444213
 GameObject:
@@ -6499,7 +6499,7 @@ SpriteRenderer:
   m_Size: {x: 0.8359375, y: 0.9140625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

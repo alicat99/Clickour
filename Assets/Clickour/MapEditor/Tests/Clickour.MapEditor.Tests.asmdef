@@ -1,0 +1,7 @@
+{
+  "name": "Clickour.MapEditor.Tests",
+  "rootNamespace": "Clickour.MapEditor.Tests",
+  "references": ["Clickour.MapEditor"],
+  "includePlatforms": ["Editor"],
+  "optionalUnityReferences": ["TestAssemblies"]
+}

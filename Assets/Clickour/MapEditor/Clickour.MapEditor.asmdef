@@ -1,0 +1,11 @@
+{
+  "name": "Clickour.MapEditor",
+  "rootNamespace": "Clickour.MapEditor",
+  "references": [
+    "Clickour.Balance",
+    "Clickour.Core",
+    "Unity.InputSystem",
+    "Unity.TextMeshPro",
+    "Unity.ugui"
+  ]
+}
