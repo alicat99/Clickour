@@ -31,7 +31,7 @@ namespace Clickour.Balance
             if (IsLoaded)
                 yield break;
 
-            var path = Path.Combine(Application.streamingAssetsPath, FILE_NAME);
+            var path = GetPath();
             using var request = UnityWebRequest.Get(path);
             yield return request.SendWebRequest();
             if (request.result != UnityWebRequest.Result.Success)
@@ -56,9 +56,18 @@ namespace Clickour.Balance
 #if UNITY_WEBGL && !UNITY_EDITOR
             return false;
 #else
-            var path = Path.Combine(Application.streamingAssetsPath, FILE_NAME);
+            var path = GetPath();
             File.WriteAllText(path, document.ToYaml());
             return true;
+#endif
+        }
+
+        static string GetPath()
+        {
+#if UNITY_EDITOR
+            return Path.Combine(Application.dataPath, "Clickour/Balance/StreamingAssets", FILE_NAME);
+#else
+            return Path.Combine(Application.streamingAssetsPath, FILE_NAME);
 #endif
         }
 

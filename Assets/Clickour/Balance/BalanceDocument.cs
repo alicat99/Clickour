@@ -38,7 +38,7 @@ namespace Clickour.Balance
         {
             var yaml = new StringBuilder();
             foreach (var key in keys)
-                yaml.Append(key).Append(": ").AppendLine(values[key]);
+                yaml.Append(key).Append(": ").Append(values[key]).Append('\n');
             return yaml.ToString();
         }
     }
