@@ -25,5 +25,8 @@ public void Release(CursorController cursor)
 | `CursorInteractor.cs` | 마우스 입력과 물리 후보를 클릭 대상으로 연결 |
 | `CursorController.cs` | 커서의 수평 이동, 홀드 상태, 점프 속도 |
 | `CollisionExitGate.cs` | 움직이는 개체별 Collider 무시와 이탈 후 복원 |
+| `Art/cursor.svg` | 플레이어 커서의 벡터 원본 |
+| `Art/platform.svg` | 파란 충돌 발판의 벡터 원본 |
+| `Art/*.png` | Inkscape로 변환한 Scene Sprite |
 
 Core는 Balance만 참조한다. 각 기믹 assembly는 Core를 참조하며 Core는 구체 기믹을 알지 못한다.
