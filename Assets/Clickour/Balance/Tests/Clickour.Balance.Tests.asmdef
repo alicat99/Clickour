@@ -1,0 +1,6 @@
+{
+  "name": "Clickour.Balance.Tests",
+  "references": ["Clickour.Balance"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "includePlatforms": ["Editor"]
+}
