@@ -1,0 +1,5 @@
+{
+  "name": "Clickour.Switch",
+  "rootNamespace": "Clickour.Switch",
+  "references": ["Clickour.Core", "Clickour.Balance"]
+}
