@@ -1,0 +1,5 @@
+{
+  "name": "Clickour.Button",
+  "rootNamespace": "Clickour.Button",
+  "references": ["Clickour.Core", "Clickour.Balance"]
+}
