@@ -47,7 +47,17 @@ namespace Clickour.GameFlow.Editor
             if (report.summary.result != BuildResult.Succeeded)
                 throw new BuildFailedException($"WebGL build failed: {report.summary.result}");
 
+            CopyBalanceYaml(output);
             Debug.Log($"Clickour WebGL build complete: {output}");
+        }
+
+        static void CopyBalanceYaml(string output)
+        {
+            var streaming_assets = Path.Combine(output, "StreamingAssets");
+            Directory.CreateDirectory(streaming_assets);
+            File.Copy(
+                "Assets/Clickour/Balance/StreamingAssets/clickour_balance.yaml",
+                Path.Combine(streaming_assets, "clickour_balance.yaml"));
         }
 
         static string NextOutputPath()

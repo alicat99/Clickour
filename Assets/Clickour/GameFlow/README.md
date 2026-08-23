@@ -31,3 +31,4 @@ BalanceDatabase.SetEncodedMap(encoded);
 GameFlow는 각 기능을 조립하지만 기믹 구현은 소유하지 않는다. 맵 인코딩은 현재 셀 타입과 배치만 저장하며 개별 기믹 Inspector 세부값 편집은 확장 지점이다.
 
 WebGL 플레이테스트 빌드는 `Clickour > Build Next WebGL`을 실행한다. 이 명령은 기존 폴더를 덮어쓰지 않고 다음 `Builds/WebNNN`을 선택한다.
+기능 폴더에 둔 단일 YAML은 빌드 완료 후 산출물의 `StreamingAssets` 루트로 복사된다.
