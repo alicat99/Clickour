@@ -1,0 +1,6 @@
+{
+  "name": "Clickour.GameFlow.Editor",
+  "rootNamespace": "Clickour.GameFlow.Editor",
+  "references": ["Clickour.GameFlow"],
+  "includePlatforms": ["Editor"]
+}

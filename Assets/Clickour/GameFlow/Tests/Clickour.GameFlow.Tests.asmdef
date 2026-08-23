@@ -1,0 +1,6 @@
+{
+  "name": "Clickour.GameFlow.Tests",
+  "references": ["Clickour.GameFlow"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "includePlatforms": ["Editor"]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Clickour.GameFlow",
+  "rootNamespace": "Clickour.GameFlow",
+  "references": [
+    "Clickour.Balance",
+    "Clickour.Core",
+    "Clickour.Button",
+    "Clickour.Switch",
+    "Clickour.Slider",
+    "Clickour.ListUI",
+    "Unity.InputSystem",
+    "Unity.TextMeshPro",
+    "Unity.ugui"
+  ]
+}
