@@ -14,17 +14,20 @@ namespace Clickour.Switch
         [SerializeField] SwitchKind kind;
         [SerializeField] Transform handle;
         [SerializeField] SpriteRenderer track_renderer;
+        [SerializeField] Sprite checked_track;
         [SerializeField] BoxCollider2D solid_collider;
         [SerializeField] BoxCollider2D exit_zone;
         [SerializeField] float handle_distance = 0.48f;
         [SerializeField] bool active_on_positive = true;
 
         bool handle_positive;
+        Sprite unchecked_track;
 
         public bool HoldsCursor => true;
 
         void Awake()
         {
+            unchecked_track = track_renderer.sprite;
             handle.GetComponent<SpriteRenderer>().sortingOrder = track_renderer.sortingOrder + 100;
             ApplyState(false);
         }
@@ -33,6 +36,7 @@ namespace Clickour.Switch
             SwitchKind kind,
             Transform handle,
             SpriteRenderer track_renderer,
+            Sprite checked_track,
             BoxCollider2D solid_collider,
             BoxCollider2D exit_zone,
             bool active_on_positive = true)
@@ -40,6 +44,8 @@ namespace Clickour.Switch
             this.kind = kind;
             this.handle = handle;
             this.track_renderer = track_renderer;
+            this.checked_track = checked_track;
+            unchecked_track = track_renderer.sprite;
             this.solid_collider = solid_collider;
             this.exit_zone = exit_zone;
             this.active_on_positive = active_on_positive;
@@ -76,20 +82,30 @@ namespace Clickour.Switch
 
         void ApplyState(bool animated)
         {
-            var target = new Vector3(handle_positive ? handle_distance : -handle_distance, 0, -0.1f);
+            var active = handle_positive == active_on_positive;
+            var target_distance = active ? Mathf.Min(handle_distance, 0.4375f) : handle_distance;
+            var target = new Vector3(handle_positive ? target_distance : -target_distance, 0, -0.1f);
+            var target_scale = Vector3.one * (active ? 1.2f : 0.8f);
             if (animated)
+            {
                 handle.DOLocalMove(target, BalanceDatabase.GetFloat("switch_toggle_duration"));
+                handle.DOScale(target_scale, BalanceDatabase.GetFloat("switch_toggle_duration"));
+            }
             else
+            {
                 handle.localPosition = target;
+                handle.localScale = target_scale;
+            }
 
             if (kind == SwitchKind.Gray)
             {
+                track_renderer.sprite = checked_track;
                 track_renderer.color = DARK_GRAY;
                 solid_collider.enabled = false;
                 return;
             }
 
-            var active = handle_positive == active_on_positive;
+            track_renderer.sprite = active ? checked_track : unchecked_track;
             track_renderer.color = active ? BLUE : PALE_BLUE;
             solid_collider.enabled = active;
         }

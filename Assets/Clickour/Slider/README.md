@@ -6,7 +6,7 @@ Game Scene의 회색/파란색, 가로/세로 및 반대 방향 슬라이더를 
 
 홀드 시작부터 커서가 전체 슬라이더의 `exit_zone`을 벗어날 때까지 진행 영역과의 충돌이 무시되어, 핸들을 놓는 순간 켜진 Collider에 걸리지 않아야 한다.
 
-외형은 현재 Material 3 Slider 기본값인 16dp 트랙, trackHeight/2 corner, 4×44dp 핸들, 6dp thumb-track gap의 anatomy를 따른다. Game Scene WebGL 스크린샷에서 가로/세로 회전 모두 같은 두께, pill track, 가는 세로 핸들, 활성/비활성 진행 영역의 구분을 확인한다.
+외형은 현재 Material 3 Slider 기본값인 16dp 트랙, trackHeight/2 corner, 4×44dp 핸들, 6dp thumb-track gap의 anatomy를 따른다. Track과 fill Sprite에는 border를 지정하고 Sliced 모드로 길이만 바꿔 end cap이 늘어나지 않게 한다. 흰 핸들 원본은 상태색으로 tint하여 회색 타입은 짙은 회색, 파란 타입은 active track과 같은 primary blue가 된다. Game Scene의 `Clickour/Capture Game View` 캡처에서 가로/세로 회전 모두 같은 두께, pill track, 가는 세로 핸들, 활성/비활성 진행 영역의 구분을 확인한다. 파란 세로 슬라이더는 중간 진행 위치에서 시작해 진한 진행 구간과 옅은 잔여 구간이 동시에 보여야 한다.
 
 ## 2. 기능 사용법
 

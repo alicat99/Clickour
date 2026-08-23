@@ -10,6 +10,8 @@ Button/Switch/Slider를 List 한 행 안에 네 모서리까지 완전히 포함
 
 각 완료 동작 후 `Assets/Clickour/Balance/StreamingAssets/clickour_balance.yaml`의 `map_data` 값이 바뀐다. WebGL에서는 Status가 `Session`, Editor/Standalone에서는 `Saved`로 시작한다. Edit Mode Test Runner의 `MapCodecTests`는 요소 위치, 크기, 회전과 List 행 소속의 Base64 왕복 및 행 경계에 정확히 맞는 요소의 포함 판정을 검증한다.
 
+Material 외형 검증은 MapEditor를 Play한 뒤 `Clickour/Capture Game View`를 실행한다. 우측 팔레트의 네 항목은 12px corner의 tonal card, 동일한 preview 시작선과 label/body text 계층을 사용해야 한다. Slider preview에는 active/inactive track과 thumb가 모두 보여야 하며, List preview는 실제 기믹과 같은 단일 outer container, 연속 row surface, divider와 trailing hamburger를 사용해야 한다. `SNAP TO GRID`는 52px 행 hit area 안에서 20px checkbox만 표시되어야 한다.
+
 ## 2. 기능 사용법
 
 새 요소 종류는 `MapElementKind`와 Scene의 `MapEditorController.element_prefabs`에 prefab을 함께 추가한다. prefab root에는 `RectTransform`, `Image`, `MapEditorElement`가 필요하다. List prefab은 `MapListRows`에 고정 행 RectTransform 목록을 전달한다.
@@ -51,5 +53,9 @@ BalanceDatabase.SetEncodedMap(MapCodec.Encode(document));
 | `Art/grid.png` | Inkscape로 변환한 map canvas Sprite |
 | `Art/back_button.svg` | Material pill과 leading arrow를 분리한 뒤로가기 버튼 원본 |
 | `Art/list_preview.svg` | palette용 Material one-line List 축약 원본 |
+| `Art/switch_preview.svg` | palette용 Material Switch 상태 축약 원본 |
+| `Art/slider_preview.svg` | palette용 Material Slider 진행 상태 축약 원본 |
+| `Art/palette_card.svg` | palette 항목 공통 tonal card 원본 |
+| `Art/checkmark.svg` | grid snap checkbox의 체크 glyph 원본 |
 
 `MapEditorController`가 정식 `MapDocument` 상태를 소유하고 Unity UI Component는 입력과 표현만 연결한다. MapEditor는 Balance와 Core 입력을 참조하지만 GameFlow 또는 실제 기믹 assembly를 참조하지 않는다. Scene 전환은 GameFlow가 MapEditor 내부를 알지 않은 채 담당한다.

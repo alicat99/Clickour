@@ -7,6 +7,7 @@ namespace Clickour.Slider
     public sealed class SliderMechanic : MonoBehaviour, ICursorClickTarget
     {
         static readonly Color DARK_GRAY = new Color32(66, 70, 77, 255);
+        static readonly Color GRAY_TRACK = new Color32(202, 196, 208, 255);
         static readonly Color BLUE = new Color32(11, 87, 208, 255);
         static readonly Color PALE_BLUE = new Color32(211, 227, 253, 255);
 
@@ -25,6 +26,7 @@ namespace Clickour.Slider
 
         void Awake()
         {
+            ConfigureSlicedRenderers();
             fill_renderer.sortingOrder = track_renderer.sortingOrder + 50;
             handle.GetComponent<SpriteRenderer>().sortingOrder = track_renderer.sortingOrder + 100;
             ApplyVisuals();
@@ -47,6 +49,7 @@ namespace Clickour.Slider
             this.exit_zone = exit_zone;
             this.travel = travel;
             handle.localPosition = new Vector3(-travel * 0.5f, 0, -0.2f);
+            ConfigureSlicedRenderers();
             ApplyVisuals();
         }
 
@@ -88,26 +91,37 @@ namespace Clickour.Slider
 
         void ApplyVisuals()
         {
+            fill_renderer.transform.localScale = Vector3.one;
+
             if (kind == SliderKind.Gray)
             {
-                track_renderer.color = DARK_GRAY;
+                track_renderer.color = GRAY_TRACK;
                 fill_renderer.enabled = false;
                 solid_collider.enabled = false;
+                handle.GetComponent<SpriteRenderer>().color = DARK_GRAY;
                 return;
             }
 
             track_renderer.color = PALE_BLUE;
             fill_renderer.enabled = true;
             fill_renderer.color = BLUE;
+            handle.GetComponent<SpriteRenderer>().color = BLUE;
             var filled_length = handle.localPosition.x + travel * 0.5f;
             fill_renderer.transform.localPosition = new Vector3(
                 -travel * 0.5f + filled_length * 0.5f,
                 0,
                 -0.1f);
-            fill_renderer.transform.localScale = new Vector3(filled_length, 0.72f, 1);
+            fill_renderer.size = new Vector2(Mathf.Max(filled_length, 0.01f), 0.72f);
             solid_collider.offset = new Vector2(-travel * 0.5f + filled_length * 0.5f, 0);
             solid_collider.size = new Vector2(Mathf.Max(filled_length, 0.01f), 0.72f);
             solid_collider.enabled = filled_length > 0.02f;
+        }
+
+        void ConfigureSlicedRenderers()
+        {
+            track_renderer.drawMode = SpriteDrawMode.Sliced;
+            track_renderer.size = new Vector2(travel + 1, 1);
+            fill_renderer.drawMode = SpriteDrawMode.Sliced;
         }
     }
 }

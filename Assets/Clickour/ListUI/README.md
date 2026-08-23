@@ -4,7 +4,7 @@
 
 Game Scene의 세로 목록은 각 행 마지막 칸의 햄버거를 홀드하면 커서 중력이 YAML의 `list_vertical_hold_gravity_scale`로 낮아지고, 낙하 중 다른 행 중심을 통과할 때 순서가 바뀐다. 위/아래 방향키와 W/S는 이동에 사용하지 않는다. 가로 목록은 햄버거 홀드 중 좌/우 방향키 또는 A/D로 이동하며 다른 열 중심을 통과하면 순서가 바뀐다. 행 또는 열 내부의 라벨과 샘플 UI는 부모 항목과 함께 움직여야 한다.
 
-외형은 Material 3 one-line List item의 56dp 행, 16dp 좌우 여백, surface 배경과 24dp 상당 trailing drag icon anatomy를 따른다. Game Scene WebGL 스크린샷에서 행마다 별도 카드 외곽선이 없고, 얇은 divider와 trailing hamburger만 보이는지 확인한다.
+외형은 Material 3 one-line List item의 56dp 행, 16dp 좌우 여백, surface 배경과 24dp 상당 trailing drag icon anatomy를 따른다. 외곽 panel Sprite에는 border를 지정하고 Sliced 모드로 크기를 바꿔 모서리 반경을 유지한다. Game Scene의 `Clickour/Capture Game View` 캡처에서 모든 항목이 외곽 패널 안에 포함되고, 행마다 별도 카드 외곽선 없이 얇은 divider와 trailing hamburger가 보이는지 확인한다. `ListHandle`은 런타임에 행 surface보다 높은 sorting order를 적용한다.
 
 ## 2. 기능 사용법
 

@@ -10,6 +10,11 @@ namespace Clickour.ListUI
 
         public bool HoldsCursor => true;
 
+        void Awake()
+        {
+            GetComponent<SpriteRenderer>().sortingOrder = 100;
+        }
+
         public void Configure(ReorderableList owner, Transform item)
         {
             this.owner = owner;

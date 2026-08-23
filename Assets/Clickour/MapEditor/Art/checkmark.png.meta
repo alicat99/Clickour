@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3df2926af7b378a4caf03e03ceda5783
+guid: ed670822f1740824dadb670d8fce0c2d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7483554341461126079
-    second: hamburger_0
+      213: 5744904054898057027
+    second: checkmark_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,10 +48,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hamburger_0
+      name: checkmark_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 128
-        height: 128
+        x: 10
+        y: 14
+        width: 45
+        height: 37
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 14490ebd9f2152890800000000000000
-      internalID: -7483554341461126079
+      spriteID: 34f56e4dccff9bf40800000000000000
+      internalID: 5744904054898057027
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      hamburger_0: -7483554341461126079
+      checkmark_0: 5744904054898057027
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

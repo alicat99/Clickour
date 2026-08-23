@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3df2926af7b378a4caf03e03ceda5783
+guid: 30563f91112af0948b3c85b31cda3e18
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7483554341461126079
-    second: hamburger_0
+      213: -49752331827290434
+    second: palette_card_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hamburger_0
+      name: palette_card_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
+        width: 328
+        height: 116
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 14490ebd9f2152890800000000000000
-      internalID: -7483554341461126079
+      spriteID: ebedfae848e3f4ff0800000000000000
+      internalID: -49752331827290434
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      hamburger_0: -7483554341461126079
+      palette_card_0: -49752331827290434
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
