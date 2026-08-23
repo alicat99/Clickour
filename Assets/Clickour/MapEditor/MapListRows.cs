@@ -51,7 +51,7 @@ namespace Clickour.MapEditor
                 foreach (var corner in corners)
                 {
                     var local = rows[i].InverseTransformPoint(corner);
-                    if (rows[i].rect.Contains(local))
+                    if (Contains(rows[i].rect, local))
                         continue;
                     contains_all = false;
                     break;
@@ -67,6 +67,15 @@ namespace Clickour.MapEditor
             containing_row = null;
             row_index = -1;
             return false;
+        }
+
+        static bool Contains(Rect rect, Vector2 point)
+        {
+            const float tolerance = 0.25f;
+            return point.x >= rect.xMin - tolerance &&
+                point.x <= rect.xMax + tolerance &&
+                point.y >= rect.yMin - tolerance &&
+                point.y <= rect.yMax + tolerance;
         }
     }
 }

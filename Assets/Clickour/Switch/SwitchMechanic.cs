@@ -23,6 +23,12 @@ namespace Clickour.Switch
 
         public bool HoldsCursor => true;
 
+        void Awake()
+        {
+            handle.GetComponent<SpriteRenderer>().sortingOrder = track_renderer.sortingOrder + 100;
+            ApplyState(false);
+        }
+
         public void Configure(
             SwitchKind kind,
             Transform handle,
@@ -70,7 +76,7 @@ namespace Clickour.Switch
 
         void ApplyState(bool animated)
         {
-            var target = new Vector3(handle_positive ? handle_distance : -handle_distance, 0, 0);
+            var target = new Vector3(handle_positive ? handle_distance : -handle_distance, 0, -0.1f);
             if (animated)
                 handle.DOLocalMove(target, BalanceDatabase.GetFloat("switch_toggle_duration"));
             else

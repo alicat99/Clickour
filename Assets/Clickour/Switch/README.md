@@ -4,7 +4,7 @@
 
 Game Scene에는 회색/파란색과 0°, 90°, 180°, 270° 예제가 있다. 2×1 또는 1×2 트랙의 핸들에 커서를 겹쳐 클릭하면 클릭 지점에서 고정된다. 버튼을 떼면 핸들이 반대편으로 토글되고 그 이동 방향으로 발사된다. 가로 스위치는 한 칸 수직 점프 속도와 그 두 배의 수평 속도를 사용한다. 세로 스위치는 같은 두 배 속도를 축 방향으로 사용한다. 파란 타입은 지정된 활성 핸들 위치에서만 진한 파랑과 고체 Collider가 된다.
 
-외형은 Material 3의 52×32dp 트랙과 원형 handle anatomy를 따른다. Game Scene WebGL 스크린샷에서 full corner 트랙, 얇은 outline, 중앙 정렬된 원형 핸들, 회색/파란 상태색을 확인한다. 색은 게임 규칙 때문에 M3 토큰의 역할을 짙은 회색 clickable과 Google blue 계열 collidable에 매핑한다.
+외형은 Material 3의 52×32dp 트랙과 원형 handle anatomy를 따른다. Game Scene WebGL 스크린샷에서 full corner 트랙, 얇은 outline, 중앙 정렬된 밝은 원형 핸들과 짙은 clickable outline, 회색/파란 상태색을 확인한다. 색은 게임 규칙 때문에 M3 토큰의 역할을 짙은 회색 clickable과 Google blue 계열 collidable에 매핑한다.
 
 ## 2. 기능 사용법
 

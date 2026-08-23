@@ -77,7 +77,8 @@ namespace Clickour.MapEditor
             element.Rect.anchoredPosition = map_position;
             SnapAndClamp(element, !IsShiftPressed());
             Select(element);
-            CommitMutation($"{kind} placed");
+            EvaluateListOwnership(element);
+            CommitMutation(DescribeElement(element, "placed"));
         }
 
         public void Select(MapEditorElement element)
@@ -106,7 +107,7 @@ namespace Clickour.MapEditor
         {
             SnapAndClamp(element, allow_snap);
             EvaluateListOwnership(element);
-            CommitMutation($"{element.Kind} updated");
+            CommitMutation(DescribeElement(element, "updated"));
         }
 
         public void CancelSelection()
@@ -436,10 +437,14 @@ namespace Clickour.MapEditor
 
                 var owner = list.GetComponent<MapEditorElement>();
                 element.SetListOwner(owner.Id, row_index, row);
-                SetStatus($"{element.Kind} belongs to list row {row_index + 1}");
                 return;
             }
         }
+
+        static string DescribeElement(MapEditorElement element, string action) =>
+            element.OwnerRow >= 0
+                ? $"{element.Kind} {action} · list row {element.OwnerRow + 1}"
+                : $"{element.Kind} {action}";
 
         void NormalizeLayerOrder()
         {

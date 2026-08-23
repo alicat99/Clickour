@@ -23,6 +23,13 @@ namespace Clickour.Slider
 
         public bool HoldsCursor => true;
 
+        void Awake()
+        {
+            fill_renderer.sortingOrder = track_renderer.sortingOrder + 50;
+            handle.GetComponent<SpriteRenderer>().sortingOrder = track_renderer.sortingOrder + 100;
+            ApplyVisuals();
+        }
+
         public void Configure(
             SliderKind kind,
             Transform handle,
@@ -39,7 +46,7 @@ namespace Clickour.Slider
             this.solid_collider = solid_collider;
             this.exit_zone = exit_zone;
             this.travel = travel;
-            handle.localPosition = new Vector3(-travel * 0.5f, 0, 0);
+            handle.localPosition = new Vector3(-travel * 0.5f, 0, -0.2f);
             ApplyVisuals();
         }
 
@@ -62,7 +69,7 @@ namespace Clickour.Slider
             if (Mathf.Abs(position) >= travel * 0.5f && Mathf.Sign(handle_speed) == Mathf.Sign(position))
                 handle_speed = 0;
 
-            handle.localPosition = new Vector3(position, 0, 0);
+            handle.localPosition = new Vector3(position, 0, -0.2f);
             cursor.MoveFixedHold((Vector2)handle.position + cursor_offset);
             ApplyVisuals();
         }
@@ -93,7 +100,10 @@ namespace Clickour.Slider
             fill_renderer.enabled = true;
             fill_renderer.color = BLUE;
             var filled_length = handle.localPosition.x + travel * 0.5f;
-            fill_renderer.transform.localPosition = new Vector3(-travel * 0.5f + filled_length * 0.5f, 0, 0);
+            fill_renderer.transform.localPosition = new Vector3(
+                -travel * 0.5f + filled_length * 0.5f,
+                0,
+                -0.1f);
             fill_renderer.transform.localScale = new Vector3(filled_length, 0.72f, 1);
             solid_collider.offset = new Vector2(-travel * 0.5f + filled_length * 0.5f, 0);
             solid_collider.size = new Vector2(Mathf.Max(filled_length, 0.01f), 0.72f);
