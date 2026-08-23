@@ -1,0 +1,5 @@
+{
+  "name": "Clickour.ListUI",
+  "rootNamespace": "Clickour.ListUI",
+  "references": ["Clickour.Core", "Clickour.Balance", "Unity.InputSystem"]
+}
