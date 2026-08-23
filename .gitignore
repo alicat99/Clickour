@@ -108,3 +108,6 @@ InitTestScene*.unity*
 
 # Visual Studio Code workspace settings
 /.vscode/
+
+# Codex project settings
+/.codex/
