@@ -6,6 +6,8 @@ Game Scene의 회색/파란색, 가로/세로 및 반대 방향 슬라이더를 
 
 홀드 시작부터 커서가 전체 슬라이더의 `exit_zone`을 벗어날 때까지 진행 영역과의 충돌이 무시되어, 핸들을 놓는 순간 켜진 Collider에 걸리지 않아야 한다.
 
+외형은 현재 Material 3 Slider 기본값인 16dp 트랙, trackHeight/2 corner, 4×44dp 핸들, 6dp thumb-track gap의 anatomy를 따른다. Game Scene WebGL 스크린샷에서 가로/세로 회전 모두 같은 두께, pill track, 가는 세로 핸들, 활성/비활성 진행 영역의 구분을 확인한다.
+
 ## 2. 기능 사용법
 
 루트에 `SliderMechanic`, 트랙과 진행 영역 SpriteRenderer, 진행 영역 `solid_collider`, 전체 크기 Trigger `exit_zone`을 둔다. 핸들 자식만 Clickable 레이어와 Trigger Collider를 사용한다. `Configure`의 `travel`은 핸들 중심이 이동할 수 있는 로컬 X 길이다. 네 방향은 루트 Transform 회전으로 지정한다.
@@ -24,3 +26,5 @@ mechanic.Configure(SliderKind.Blue, handle, track, fill, solid, exit_zone, 4);
 | `Art/*.png` | Inkscape 변환 Sprite |
 
 충돌 예외는 Cursor 타입이 아니라 상호작용한 이동 Collider와 슬라이더 Collider 쌍에 적용되므로 이후 다른 충돌 가능 개체에도 같은 Core 계약을 확장할 수 있다.
+
+형상 기준: https://github.com/material-components/material-components-android/blob/master/docs/components/Slider.md

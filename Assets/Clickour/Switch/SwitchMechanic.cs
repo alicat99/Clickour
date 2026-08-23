@@ -7,9 +7,9 @@ namespace Clickour.Switch
 {
     public sealed class SwitchMechanic : MonoBehaviour, ICursorClickTarget
     {
-        static readonly Color DARK_GRAY = new(0.26f, 0.28f, 0.31f);
-        static readonly Color BLUE = new(0.16f, 0.52f, 0.92f);
-        static readonly Color PALE_BLUE = new(0.45f, 0.7f, 0.9f);
+        static readonly Color DARK_GRAY = new Color32(66, 70, 77, 255);
+        static readonly Color BLUE = new Color32(11, 87, 208, 255);
+        static readonly Color PALE_BLUE = new Color32(211, 227, 253, 255);
 
         [SerializeField] SwitchKind kind;
         [SerializeField] Transform handle;
