@@ -1,7 +1,6 @@
 using Clickour.Balance;
 using Clickour.Core;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Clickour.Slider
 {
@@ -54,15 +53,7 @@ namespace Clickour.Slider
 
         public void Hold(CursorController cursor, float delta_time)
         {
-            var keyboard = Keyboard.current;
-            var input = 0f;
-            if (keyboard != null)
-            {
-                if (keyboard.rightArrowKey.isPressed || keyboard.upArrowKey.isPressed)
-                    input += 1;
-                if (keyboard.leftArrowKey.isPressed || keyboard.downArrowKey.isPressed)
-                    input -= 1;
-            }
+            var input = Vector2.Dot(DirectionalInput.Read(), (Vector2)transform.right.normalized);
 
             var acceleration = BalanceDatabase.GetFloat("slider_acceleration");
             var max_speed = BalanceDatabase.GetFloat("slider_max_speed");

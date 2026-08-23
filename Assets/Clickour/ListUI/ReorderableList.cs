@@ -3,7 +3,6 @@ using Clickour.Balance;
 using Clickour.Core;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Clickour.ListUI
 {
@@ -44,15 +43,7 @@ namespace Clickour.ListUI
         {
             if (horizontal)
             {
-                var input = 0f;
-                var keyboard = Keyboard.current;
-                if (keyboard != null)
-                {
-                    if (keyboard.rightArrowKey.isPressed)
-                        input += 1;
-                    if (keyboard.leftArrowKey.isPressed)
-                        input -= 1;
-                }
+                var input = DirectionalInput.Read().x;
                 var speed = BalanceDatabase.GetFloat("list_horizontal_hold_speed");
                 active_cursor.MoveFixedHold(active_cursor.Position + Vector2.right * (input * speed * delta_time));
             }

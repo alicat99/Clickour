@@ -1,6 +1,5 @@
 using Clickour.Balance;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Clickour.Core
 {
@@ -48,16 +47,8 @@ namespace Clickour.Core
                 return;
             }
 
-            var camera = Camera.main;
-            var mouse = Mouse.current;
-            if (camera == null || mouse == null)
-                return;
-
-            var mouse_world = camera.ScreenToWorldPoint(mouse.position.ReadValue());
-            var offset = mouse_world.x - body.position.x;
-            var target_speed = Mathf.Clamp(offset * 8,
-                -BalanceDatabase.GetFloat("cursor_max_horizontal_speed"),
-                BalanceDatabase.GetFloat("cursor_max_horizontal_speed"));
+            var max_speed = BalanceDatabase.GetFloat("cursor_max_horizontal_speed");
+            var target_speed = DirectionalInput.Read().x * max_speed;
             var speed = Mathf.MoveTowards(body.linearVelocity.x, target_speed,
                 BalanceDatabase.GetFloat("cursor_horizontal_acceleration") * Time.fixedDeltaTime);
             body.linearVelocity = new Vector2(speed, body.linearVelocity.y);
